@@ -20,25 +20,75 @@
         <p class="topic-label">concepts i'm working through / 01</p>
         <h1>tokenizers</h1>
 
-        <div class="placeholder-grid">
-          <section class="placeholder">
-            <h2>01 / definition</h2>
-            <p>Notes will go here.</p>
+        <div class="concept-notes">
+          <section class="concept-section" aria-labelledby="bytes-title">
+            <div class="concept-heading">
+              <p>01</p>
+              <h2 id="bytes-title">bytes</h2>
+            </div>
+
+            <div class="concept-copy">
+              <p>
+                Very simple: 8 bits make one byte. A byte can be represented in different ways: as an integer from
+                <code>0</code> to <code>255</code>, in hexadecimal such as <code>0x12</code>, or in a Python bytes
+                literal such as <code>b' '</code>.
+              </p>
+              <p>
+                In Python, <code>bytes</code> is a built-in type. A bytes object holds an immutable sequence of byte
+                values. For example, <code>b'x'</code> contains one byte. That byte has the integer value
+                <code>120</code>, the hexadecimal value <code>0x78</code>, and the bit pattern
+                <code>01111000</code>.
+              </p>
+
+              <div class="representation" aria-label="The byte for lowercase x shown four ways">
+                <div><span>literal</span><strong>b'x'</strong></div>
+                <div><span>integer</span><strong>120</strong></div>
+                <div><span>hex</span><strong>0x78</strong></div>
+                <div><span>bits</span><strong>01111000</strong></div>
+              </div>
+            </div>
           </section>
 
-          <section class="placeholder">
-            <h2>02 / why they matter</h2>
-            <p>Notes will go here.</p>
+          <section class="concept-section" aria-labelledby="utf-title">
+            <div class="concept-heading">
+              <p>02</p>
+              <h2 id="utf-title">utf-8</h2>
+            </div>
+
+            <div class="concept-copy">
+              <p>
+                A Unicode scalar value can be represented by one to four bytes in UTF-8. UTF stands for
+                <em>Unicode Transformation Format</em>, and the 8 refers to its 8-bit code units.
+              </p>
+              <p>
+                For example, <code>a</code> is represented by one byte with the hexadecimal value <code>0x61</code>.
+                The laughing emoji <code>😂</code> is represented by four bytes:
+                <code>0xF0 0x9F 0x98 0x82</code>. Here, each byte is written in hexadecimal.
+              </p>
+
+              <div class="encoding-examples" aria-label="UTF-8 encoding examples">
+                <div>
+                  <strong>a</strong>
+                  <span>1 byte</span>
+                  <code>0x61</code>
+                </div>
+                <div>
+                  <strong>😂</strong>
+                  <span>4 bytes</span>
+                  <code>0xF0 0x9F 0x98 0x82</code>
+                </div>
+              </div>
+            </div>
           </section>
 
-          <section class="placeholder">
-            <h2>03 / examples</h2>
-            <p>Examples will go here.</p>
-          </section>
-
-          <section class="placeholder">
-            <h2>04 / references</h2>
-            <p>Links and sources will go here.</p>
+          <section class="concept-sources" aria-labelledby="sources-title">
+            <p id="sources-title">sources</p>
+            <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects" target="_blank" rel="noreferrer">
+              Python documentation — bytes objects <span aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://www.unicode.org/versions/latest/ch03.pdf" target="_blank" rel="noreferrer">
+              The Unicode Standard — UTF-8 <span aria-hidden="true">&#8599;</span>
+            </a>
           </section>
         </div>
       </article>
