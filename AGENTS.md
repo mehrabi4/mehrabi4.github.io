@@ -15,7 +15,8 @@ This repository is the live GitHub Pages site for `mehrabi4`: <https://mehrabi4.
 ## Ongoing workflow
 
 - The user will add learning material through this conversation over time.
-- The writing mediator lives at `studio/index.html`. It autosaves locally and exports `.concept-draft.json` handoff files containing the draft, rich-text structure, links, equations, and embedded images.
+- The writing mediator is a local-only, intentionally gitignored tool at `local-studio/`. Never commit or deploy that directory. `local-studio/open-studio.command` launches it on this computer.
+- The local studio autosaves in the browser and exports `.concept-draft.json` handoff files containing the draft, rich-text structure, links, equations, and embedded images.
 - When the user supplies an exported studio draft and asks to publish it, interpret and lightly structure it, preserve the user's meaning and voice, extract embedded images into site assets, create or update the topic page, add it to the homepage list, verify, commit, and push.
 - Add new material to the **concepts i'm working through** list in `index.html`, creating a separate plain page when an item needs its own content.
 - The first learning topic is **tokenizers** at `learning/tokenizers/index.html`.
