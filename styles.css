@@ -43,8 +43,7 @@ a {
   background: #f4f3ef;
 }
 
-.name,
-.github-link {
+.name {
   width: fit-content;
   font-size: 0.68rem;
   font-weight: 700;
@@ -65,9 +64,10 @@ a {
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
   cursor: pointer;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.7rem, 3vw, 3rem);
-  letter-spacing: -0.04em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(1.15rem, 2.1vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
   list-style: none;
 }
 
@@ -114,12 +114,13 @@ a {
   border-bottom: 1px solid #cecdc7;
 }
 
-.learning-list a,
-.empty-item {
+.learning-list a {
   display: block;
   padding: 1rem 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.82rem;
   line-height: 1.4;
+  text-transform: lowercase;
 }
 
 .learning-list a:hover,
@@ -129,16 +130,6 @@ a {
 
 .learning-list a {
   transition: padding 140ms ease;
-}
-
-.empty-item {
-  color: #77756f;
-}
-
-.github-link {
-  display: flex;
-  gap: 0.35rem;
-  color: #56544f;
 }
 
 .artwork {
@@ -168,7 +159,7 @@ a {
   }
 
   .learning-menu summary {
-    font-size: clamp(1.35rem, 7vw, 2rem);
+    font-size: clamp(1rem, 4.8vw, 1.4rem);
   }
 
   .artwork {
@@ -179,6 +170,114 @@ a {
     width: 100%;
     max-height: 82dvh;
     object-fit: contain;
+  }
+}
+
+.topic-page {
+  min-height: 100%;
+  overflow-y: auto;
+  background: #f4f3ef;
+}
+
+.topic-layout {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-columns: clamp(12rem, 22vw, 20rem) 1fr;
+}
+
+.topic-side {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border-right: 1px solid #cecdc7;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  text-transform: lowercase;
+}
+
+.back-link {
+  width: fit-content;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.topic-index {
+  color: #77756f;
+}
+
+.topic-content {
+  width: min(100%, 58rem);
+  padding: clamp(4rem, 10vw, 9rem) clamp(2rem, 8vw, 8rem);
+}
+
+.topic-label {
+  margin: 0 0 2rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+
+.topic-content h1 {
+  margin: 0 0 clamp(4rem, 9vw, 7rem);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(2.8rem, 9vw, 7.5rem);
+  font-weight: 500;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+  text-transform: lowercase;
+}
+
+.placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid #111;
+  border-left: 1px solid #111;
+}
+
+.placeholder {
+  min-height: 11rem;
+  padding: 1.25rem;
+  border-right: 1px solid #111;
+  border-bottom: 1px solid #111;
+}
+
+.placeholder h2 {
+  margin: 0 0 3rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+.placeholder p {
+  margin: 0;
+  color: #77756f;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 620px) {
+  .topic-layout {
+    grid-template-columns: 7.5rem 1fr;
+  }
+
+  .topic-side {
+    padding: 1.25rem 1rem;
+  }
+
+  .topic-content {
+    padding: 5rem 1.25rem;
+  }
+
+  .placeholder-grid {
+    grid-template-columns: 1fr;
   }
 }
 
