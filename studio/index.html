@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#f4f3ef" />
+    <title>concept studio — mehrabi4</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/katex.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" />
+    <link rel="stylesheet" href="./studio.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <script defer src="./studio.js"></script>
+  </head>
+  <body>
+    <main class="studio-shell">
+      <aside class="studio-rail">
+        <div>
+          <p class="rail-kicker">concept studio</p>
+          <h1>write first.<br />shape later.</h1>
+        </div>
+
+        <ol class="workflow">
+          <li><span>01</span> write and format</li>
+          <li><span>02</span> export the draft</li>
+          <li><span>03</span> attach it in our chat</li>
+          <li><span>04</span> tell me to publish</li>
+        </ol>
+
+        <div class="privacy-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          <p>Your draft autosaves only in this browser until you export it.</p>
+        </div>
+      </aside>
+
+      <section class="workspace" aria-label="Writing workspace">
+        <header class="studio-header">
+          <div class="save-state" aria-live="polite">
+            <span data-save-dot></span>
+            <span data-save-status>ready</span>
+          </div>
+
+          <div class="header-actions">
+            <button class="quiet-button" type="button" data-new>new</button>
+            <button class="quiet-button" type="button" data-import>import</button>
+            <button class="quiet-button" type="button" data-preview>preview</button>
+            <button class="export-button" type="button" data-export>export for publishing</button>
+            <input type="file" accept=".json,.concept-draft.json,application/json" data-import-file hidden />
+          </div>
+        </header>
+
+        <div class="document-meta">
+          <label>
+            <span>title</span>
+            <input type="text" placeholder="untitled concept" autocomplete="off" data-title />
+          </label>
+          <label>
+            <span>url name</span>
+            <input type="text" placeholder="untitled-concept" autocomplete="off" data-slug />
+          </label>
+        </div>
+
+        <div class="editor-frame">
+          <div id="toolbar" aria-label="Formatting tools">
+            <span class="ql-formats">
+              <select class="ql-header" aria-label="Text style">
+                <option value="1">Heading 1</option>
+                <option value="2">Heading 2</option>
+                <option value="3">Heading 3</option>
+                <option selected>Normal</option>
+              </select>
+              <select class="ql-font" aria-label="Font">
+                <option selected>Sans</option>
+                <option value="serif">Serif</option>
+                <option value="mono">Mono</option>
+                <option value="grotesk">Grotesk</option>
+                <option value="typewriter">Typewriter</option>
+              </select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-bold" aria-label="Bold"></button>
+              <button class="ql-italic" aria-label="Italic"></button>
+              <button class="ql-underline" aria-label="Underline"></button>
+              <button class="ql-strike" aria-label="Strike through"></button>
+            </span>
+            <span class="ql-formats">
+              <select class="ql-color" aria-label="Text color"></select>
+              <select class="ql-background" aria-label="Highlight color">
+                <option selected></option>
+                <option value="#fff2a8"></option>
+                <option value="#d9f5c8"></option>
+                <option value="#cde8ff"></option>
+                <option value="#f8d0d8"></option>
+                <option value="#d8d1ff"></option>
+              </select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-list" value="ordered" aria-label="Numbered list"></button>
+              <button class="ql-list" value="bullet" aria-label="Bullet list"></button>
+              <button class="ql-blockquote" aria-label="Quote"></button>
+              <button class="ql-code-block" aria-label="Code block"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-link" aria-label="Insert link"></button>
+              <button class="ql-image" aria-label="Insert image"></button>
+              <button class="ql-formula" aria-label="Insert LaTeX equation"></button>
+            </span>
+            <span class="ql-formats">
+              <select class="ql-align" aria-label="Alignment"></select>
+              <button class="ql-clean" aria-label="Remove formatting"></button>
+            </span>
+          </div>
+
+          <div id="editor">
+            <h1>Start with a thought.</h1>
+            <p>Write loosely. Use the toolbar when formatting helps, and leave the shaping for later.</p>
+          </div>
+        </div>
+
+        <footer class="studio-footer">
+          <p><strong>equations:</strong> use the <span aria-hidden="true">f(x)</span> toolbar button and enter LaTeX such as <code>E = mc^2</code>.</p>
+          <p><strong>publishing:</strong> export, attach the downloaded file in our chat, and say “publish this.”</p>
+        </footer>
+      </section>
+    </main>
+
+    <dialog class="preview-dialog" data-preview-dialog>
+      <button class="preview-close" type="button" aria-label="Close preview" data-preview-close>&times;</button>
+      <article class="preview-document">
+        <p class="preview-label">preview</p>
+        <h1 data-preview-title>untitled concept</h1>
+        <div class="preview-body ql-editor" data-preview-body></div>
+      </article>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+  </body>
+</html>
